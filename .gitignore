@@ -1,0 +1,15 @@
+# Exclude personal study materials directory and its contents
+**/Materials/
+
+# Ignore all empty directories
+!**/.gitkeep
+
+# macOS specific files
+.DS_Store
+
+# Windows-specific files
+desktop.ini
+Thumbs.db
+
+# Visual Studio Code settings
+.vscode/
