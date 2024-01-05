@@ -1,15 +1,16 @@
 #include <stdio.h>
 
-void meow(void); // Setting function prototype.
+void meow(int n); // Setting function prototype.
 
 int main(void) {
-    for(int i = 0; i < 3; i++) {
-        meow();
-    }
-
-    return 0;
+    int m = 0;
+    printf("How many meows you want? ");
+    scanf("%d", &m);
+    meow(m);
 }
 
-void meow(void) {
-    printf("meow\n");
+void meow(int n) {
+    for(int i = 0; i < n; i++) {
+        printf("meow\n");
+    }
 }
