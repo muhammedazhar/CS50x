@@ -6,6 +6,4 @@ int main() {
     printf("What's your first name? ");
     scanf("%49s", answer); // Added '%49s' to limit the input to 49 characters to avoid buffer overflow.
     printf("Hello, %s!\n", answer);
-
-    return 0;
 }
