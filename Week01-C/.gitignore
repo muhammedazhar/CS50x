@@ -6,6 +6,9 @@ meow
 calculator
 mario
 
+# Ignoring 'test' folder
+test/
+
 # Prerequisites
 *.d
 
