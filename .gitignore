@@ -1,5 +1,10 @@
 # Exclude personal study materials directory and its contents
 **/Materials/
+*.zip
+
+# CS50 Library files
+libcs50-*
+libcs50_*
 
 # Ignore all empty directories
 !**/.gitkeep
