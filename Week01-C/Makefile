@@ -1,19 +1,26 @@
 # Makefile for compiling C programs with 'cs50.h' library on Mac
-# Author : Muhammed Azhar (github.com/muhammedazhar)
+# Author: Muhammed Azhar (github.com/muhammedazhar)
 
-VERSION := 1.2.0
+# Version of the Makefile
+VERSION := 1.2.1
+
+# Author information
 AUTHOR := "Muhammed Azhar (github.com/muhammedazhar)"
 
 # Finds the device details
 CHIP := $(shell system_profiler SPHardwareDataType | awk -F': ' '/Chip/{print $$2}')
 MODEL := $(shell system_profiler SPHardwareDataType | awk -F': ' '/Model Name/{print $$2}')
 
+# Concatenates chip and model to form the device name
 DEVICE := $(CHIP) $(MODEL)
 
 # Determine the default C compiler on Mac
-CC := $(shell cc -v 2>&1 | grep -o 'clang\|gcc' | head -n1)
+MCC := $(shell cc -v 2>&1 | grep -o 'clang\|gcc' | head -n1)
 
-# Predefined flags and libraries
+# If your compiler is NOT found, you can change it to 'gcc' or 'clang' here
+CC := $(MCC)
+
+# Setting flags and libraries
 C_ERROR = -pedantic
 CFLAGS = -Wall -Wextra -Werror -std=c11
 LIBRARY = -lcs50
@@ -24,9 +31,10 @@ SOURCE_FILES = $(wildcard *.c)
 # Derive the list of executables from the source files
 EXECUTABLES = $(basename $(SOURCE_FILES))
 
-# Complies 
+# Compiles all executable C programs in one go
 all: $(EXECUTABLES)
 
+# Compiles user-specified target files
 %: %.c
 	@$(CC) $(CFLAGS) -o $@ $< $(LIBRARY)
 
@@ -34,18 +42,23 @@ all: $(EXECUTABLES)
 pedantic: CFLAGS += $(C_ERROR)
 pedantic: $(EXECUTABLES)
 
+# Displays the version of the Makefile
 version:
 	@echo $(VERSION)
 
+# Displays author information
 .PHONY: author
 author:
 	@echo $(AUTHOR)
 
+# Displays information about the current compiler and device
 which_compiler:
 	@echo "Found '$(CC)' compiler on this $(DEVICE)."
 
+# Displays information about the device
 which_device:
 	@echo "Your device is $(DEVICE)"
 
+# Removes all compiled programs except the source files
 clean:
 	@rm -f $(EXECUTABLES)
