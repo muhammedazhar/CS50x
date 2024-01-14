@@ -1,8 +1,8 @@
-# Makefile for compiling C programs with 'cs50.h' library on Mac
+# Makefile for compiling C programs with the 'cs50.h' library on Mac
 # Author: Muhammed Azhar (github.com/muhammedazhar)
 
 # Version of the Makefile
-VERSION := 1.2.1
+VERSION := 1.2.2
 
 # Author information
 AUTHOR := "Muhammed Azhar (github.com/muhammedazhar)"
@@ -32,6 +32,7 @@ SOURCE_FILES = $(wildcard *.c)
 EXECUTABLES = $(basename $(SOURCE_FILES))
 
 # Compiles all executable C programs in one go
+.PHONY: all
 all: $(EXECUTABLES)
 
 # Compiles user-specified target files
@@ -52,13 +53,16 @@ author:
 	@echo $(AUTHOR)
 
 # Displays information about the current compiler and device
+.PHONY: which_compiler
 which_compiler:
 	@echo "Found '$(CC)' compiler on this $(DEVICE)."
 
 # Displays information about the device
+.PHONY: which_device
 which_device:
 	@echo "Your device is $(DEVICE)"
 
 # Removes all compiled programs except the source files
+.PHONY: clean
 clean:
 	@rm -f $(EXECUTABLES)
