@@ -17,7 +17,7 @@ DEVICE := $(CHIP) $(MODEL)
 # Determine the default C compiler on Mac
 MCC := $(shell cc -v 2>&1 | grep -o 'clang\|gcc' | head -n1)
 
-# If your compiler is NOT found, you can change it to 'gcc' or 'clang' here
+# If your compiler is NOT found, you can replace '$(MCC)' to 'gcc' or 'clang' here
 CC := $(MCC)
 
 # Setting flags and libraries
@@ -55,7 +55,7 @@ author:
 # Displays information about the current compiler and device
 .PHONY: which_compiler
 which_compiler:
-	@echo "Found '$(CC)' compiler on this $(DEVICE)."
+	@echo "Found '$(CC)' compiler on this $(DEVICE)!"
 
 # Displays information about the device
 .PHONY: which_device
