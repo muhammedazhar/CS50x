@@ -5,7 +5,7 @@
 VERSION := 1.2.2
 
 # Author information
-AUTHOR := "Muhammed Azhar (github.com/muhammedazhar)"
+AUTHOR := "Muhammed Azhar (https://github.com/muhammedazhar)"
 
 # Finds the device details
 CHIP := $(shell system_profiler SPHardwareDataType | awk -F': ' '/Chip/{print $$2}')
@@ -50,7 +50,7 @@ version:
 # Displays author information
 .PHONY: author
 author:
-	@echo $(AUTHOR)
+	# @echo $(AUTHOR)
 
 # Displays information about the current compiler and device
 .PHONY: which_compiler
