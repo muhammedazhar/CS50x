@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    int calls = 4;
+    int calls = get_int("Number of calls: ");
     calls = calls + 1;
     calls = calls - 2;
     calls = calls * 3;
