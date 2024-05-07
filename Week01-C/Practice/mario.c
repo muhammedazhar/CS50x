@@ -1,26 +1,24 @@
+#include <cs50.h>
 #include <stdio.h>
 
-int get_int(void);
-
-int main(void) {
-    int n = 0, i, j;
-    // Prompt user to enter a natural number.
+int main(void){
+    int n;
+    // Prompt user for height of block.
     do {
-        n = get_int();
-    }
-    while (n < 1);
-    // Prints an n-by-n grid of bricks.
-    for (i = 0; i < n; i++) {
-        for (j = 0; j < n; j++) {
+        // Get height of block.
+        n = get_int("Enter block size: ");
+        // If height is less than 1, print error message.
+        if (n < 1){
+            printf("Height must be positive! Try again.\n");
+        }
+    } while (n < 1);  // If height is less than 1, repeat prompt.
+    printf("\nPrinting block of height %i.\n\n", n);
+    // Loop to print each row of block.
+    for (int i = 0; i < n; i++){
+        // Loop to print each column of block.
+        for (int j = 0; j < n; j++){
             printf("# ");
         }
         printf("\n");
     }
-}
-
-int get_int(void) {
-    int number;
-    printf("Enter the size of matrix: ");
-    scanf("%i", &number);
-    return number;
 }
