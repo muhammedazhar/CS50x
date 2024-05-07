@@ -5,6 +5,7 @@ void print_rows(int length);
 
 int main(void){
     int height = get_int("Height: ");
+    printf("\n");
     for(int i = 0; i < height; i++){
         print_rows(i + 1);
     }
@@ -12,7 +13,7 @@ int main(void){
 
 void print_rows(int length){
     for(int i = 0; i < length; i++){
-        printf("#");
+        printf("# ");
     }
     printf("\n");
 }
