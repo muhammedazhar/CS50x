@@ -4,7 +4,7 @@
 void print_rows(int length);
 
 int main(void){
-    int height = get_int("Height: ");
+    const int height = get_int("Height: ");
     printf("\n");
     for(int i = 0; i < height; i++){
         print_rows(i + 1);
