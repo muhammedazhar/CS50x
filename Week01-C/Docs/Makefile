@@ -50,7 +50,7 @@ version:
 # Displays author information
 .PHONY: author
 author:
-	# @echo $(AUTHOR)
+	@echo $(AUTHOR)
 
 # Displays information about the current compiler and device
 .PHONY: which_compiler
