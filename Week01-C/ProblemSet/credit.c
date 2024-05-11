@@ -7,6 +7,20 @@
 #define MAX_CARD_LENGTH 16
 #define AMEX_CARD_LENGTH 15
 
+/*
+- American Express:
+    15 digits
+    Starts with 34 or 37
+
+- Mastercard:
+    16 digits
+    Starts with 51, 52, 53, 54 and 55
+
+- Visa:
+    13 or 16 digits
+    Starts with 4
+*/
+
 // Function prototypes
 string removeNonNumeric(string str);
 string getCardType(string card_number);
