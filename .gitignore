@@ -14,3 +14,40 @@ Thumbs.db
 
 # Visual Studio Code settings
 .vscode/
+
+# Xcode project files
+*.dSYM
+**/build/
+
+# CS50's .gitignore arguements
+
+# Ignore everything
+*
+
+# But don't ignore folders
+!*/
+
+# But do ignore these folders
+node_modules/
+vendor/
+
+# But don't ignore these files
+!/.devcontainer.json
+!/.vscode/settings.json
+
+# But don't ignore these types of files
+!*.c
+!*.cpp
+!*.css
+!*.db
+!*.h
+!*.html
+!*.java
+!*.js
+!*.md
+!*.py
+!*.sql
+!*.ts
+!*.txt
+!*.md
+!Makefile
