@@ -79,9 +79,7 @@ dkms.conf
 **/libcs50*/
 
 # CS50's .gitignore arguements
-.vscode/
-
-# Ignore everything
+# Ignore for complied C files
 *
 
 # But don't ignore folders
