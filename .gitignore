@@ -76,10 +76,10 @@ Mkfile.old
 dkms.conf
 
 # CS50 Library files
-libcs50-*
-libcs50_*
+**/libcs50*/
 
 # CS50's .gitignore arguements
+.vscode/
 
 # Ignore everything
 *
