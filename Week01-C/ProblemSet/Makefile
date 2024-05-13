@@ -1,1 +1,1 @@
-include ../Docs/Makefile
+include ../../Docs/Makefile

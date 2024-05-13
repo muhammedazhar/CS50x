@@ -1,2 +1,2 @@
 #include $(MAKEFILE_DIR)/Docs/Makefile
-include ../Docs/Makefile
+include ../../Docs/Makefile
