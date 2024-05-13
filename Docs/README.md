@@ -10,6 +10,7 @@ brew install libmagic
 ```bash
 pip install -r Docs/requirements.txt
 ```
+---
 # How to setup `cs50.h` library in VS Code for Mac?
 Assuming you have Visual Studio already installed and with all C/C++ extensions required for compiling and running C codes, I was able to get mine working on my Mac with Visual Studio Code as follow:
 1. Download the CS50 Library from [libcs50's GitHub release](https://github.com/cs50/libcs50/releases) page.
@@ -36,4 +37,3 @@ Assuming you have Visual Studio already installed and with all C/C++ extensions 
     source ~/.zshrc
     ```
 9. Finally, use the [`Makefile`](../Docs/Makefile) by running the `make` command in the terminal.
----
