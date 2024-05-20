@@ -66,3 +66,4 @@ which_device:
 .PHONY: clean
 clean:
 	@rm -f $(EXECUTABLES)
+	@rm -rf *.dSYM
