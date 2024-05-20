@@ -7,8 +7,7 @@ int main(void)
 {
     string s = get_string("Before: ");
     printf("After : ");
-    int n = strlen(s);
-    for (int i = 0; i < n; i++)
+    for (int i = 0, n = strlen(s); i < n; i++)
     {
         printf("%c", toupper(s[i]));
     }
