@@ -29,7 +29,7 @@ LIBRARY = -lcs50
 SOURCE_FILES = $(wildcard *.c)
 
 # Derive the list of executables from the source files
-EXECUTABLES = $(basename $(SOURCE_FILES))
+EXECUTABLES = $(patsubst %.c,%,$(SOURCE_FILES))
 
 # Compiles all executable C programs in one go
 .PHONY: all
@@ -44,6 +44,7 @@ pedantic: CFLAGS += $(C_ERROR)
 pedantic: $(EXECUTABLES)
 
 # Displays the version of the Makefile
+.PHONY: version
 version:
 	@echo $(VERSION)
 
