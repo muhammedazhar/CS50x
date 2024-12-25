@@ -58,6 +58,8 @@ This custom make script provides automatic Makefile selection for CS50 assignmen
     fi
     ```
 
+    This script is also available on [GitHub](https://github.com/muhammedazhar/muhammedazhar/blob/main/.scripts/make.sh) as file which you download it directly on local machine. Moreover, this version is more likely to be the updated from the one in the repository.
+
 3. Make the script executable:
 
     ```bash
