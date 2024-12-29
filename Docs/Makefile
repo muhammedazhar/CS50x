@@ -66,7 +66,6 @@ EXECUTABLES = $(patsubst %.c,%,$(SOURCE_FILES))
 which_compiler:
 	@echo "CS50 Make Compiler Information"
 	@echo "Compiler: $(CC)"
-	@echo "Target: $(BUILD_TARGET)"
 	@echo "Host Device: $(DEVICE)"
 
 # Displays information about the device
