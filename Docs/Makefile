@@ -40,6 +40,10 @@ LIBRARY = -lcs50
 SOURCE_FILES = $(wildcard *.c)
 EXECUTABLES = $(patsubst %.c,%,$(SOURCE_FILES))
 
+ifneq (,$(filter pedantic,$(MAKECMDGOALS)))
+    CFLAGS += $(C_ERROR)
+endif
+
 # Displays the version information of the Makefile
 .PHONY: version --version -v
 --version -v:
@@ -80,14 +84,14 @@ which_device:
 .PHONY: all
 all: $(EXECUTABLES)
 
+# Specific target for pedantic compilation
+.PHONY: pedantic
+pedantic: $(filter-out pedantic,$(MAKECMDGOALS))
+	@:
+
 # Compiles user-specified target files
 %: %.c
 	@$(CC) $(CFLAGS) -o $@ $< $(LIBRARY)
-
-# Specific target for pedantic compilation
-.PHONY: pedantic
-pedantic: CFLAGS += $(C_ERROR)
-pedantic: $(EXECUTABLES)
 
 # Removes all compiled programs except the source files
 .PHONY: clean
