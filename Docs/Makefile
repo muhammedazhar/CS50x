@@ -33,6 +33,7 @@ CC := $(MCC)
 
 # Setting flags and libraries
 C_ERROR = -pedantic
+C_DEBUG = -g3 -O0 -DDEBUG
 CFLAGS = -Wall -Wextra -Werror -std=c11
 LIBRARY = -lcs50
 
@@ -40,8 +41,14 @@ LIBRARY = -lcs50
 SOURCE_FILES = $(wildcard *.c)
 EXECUTABLES = $(patsubst %.c,%,$(SOURCE_FILES))
 
+# Add pedantic flags if specified
 ifneq (,$(filter pedantic,$(MAKECMDGOALS)))
     CFLAGS += $(C_ERROR)
+endif
+
+# Add debug flags if specified
+ifneq (,$(filter debug,$(MAKECMDGOALS)))
+    CFLAGS += $(C_DEBUG)
 endif
 
 # Displays the version information of the Makefile
@@ -84,9 +91,14 @@ which_device:
 .PHONY: all
 all: $(EXECUTABLES)
 
-# Specific target for pedantic compilation
+# Handle pedantic as a PHONY target
 .PHONY: pedantic
 pedantic: $(filter-out pedantic,$(MAKECMDGOALS))
+	@:
+
+# Handle debug as a PHONY target
+.PHONY: debug
+debug: $(filter-out debug,$(MAKECMDGOALS))
 	@:
 
 # Compiles user-specified target files
